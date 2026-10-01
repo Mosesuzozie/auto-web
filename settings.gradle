@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        mavenCentral()
+        exclusiveContent {
+            forRepository {
+                maven { name = 'Modrinth'; url = 'https://api.modrinth.com/maven' }
+            }
+            filter { includeGroup 'maven.modrinth' }
+        }
+    }
+}
+
+rootProject.name = 'AutoTrapClient-1.21.11'
